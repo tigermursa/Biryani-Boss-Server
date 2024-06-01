@@ -6,7 +6,7 @@ export type Drink = {
     price: number;
 }
 
-export type Product = {
+export type TProduct = {
     id: number;
     name: string;
     category: string;
@@ -15,6 +15,7 @@ export type Product = {
     priceSm: number;
     priceMd: number;
     priceLg: number;
+    isDeleted: boolean;
     drinks: Drink[];
 }
 
