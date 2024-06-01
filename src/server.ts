@@ -16,7 +16,6 @@ async function server() {
         // Connect to the MongoDB database using the URL from the configuration
         await mongoose.connect(config.dbUrl as string);
         console.log("Mongoose connected successfully!");
-
         // Start the Express server on the specified port from the configuration
         app.listen(config.port, () => {
             console.log(`Dear app listening on port ${config.port}`);
@@ -30,3 +29,6 @@ async function server() {
 
 // Call the server function and catch any errors that it might throw
 server().catch(err => console.log(err));
+
+
+//? maintaining double space between lines
