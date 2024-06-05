@@ -67,7 +67,7 @@ const getAllProducts = async (req: Request, res: Response) => {
 
 
 // Get One
-const getSingleTask = async (req: Request, res: Response) => {
+const getSingleProduct = async (req: Request, res: Response) => {
     try {
         const productID = req.params.id;
         const result = await ProductServices.getSingleProductFromDB(productID);
@@ -87,7 +87,7 @@ const getSingleTask = async (req: Request, res: Response) => {
 }
 
 // Delete One
-const deleteTask = async (req: Request, res: Response) => {
+const deleteProduct = async (req: Request, res: Response) => {
     try {
         const productID = req.params.id;
         const result = await ProductServices.deleteProductFromDB(productID);
@@ -129,7 +129,7 @@ const isAvailable = async (req: Request, res: Response) => {
 
 
 //Update One
-const updateTask = async (req: Request, res: Response) => {
+const updateProduct = async (req: Request, res: Response) => {
     try {
         const productID = req.params.id;
         const updatedData = req.body;
@@ -153,8 +153,8 @@ const updateTask = async (req: Request, res: Response) => {
 export const ProductController = {
     createProduct,
     getAllProducts,
-    getSingleTask,
-    deleteTask,
+    getSingleProduct,
+    deleteProduct,
     isAvailable,
-    updateTask
+    updateProduct,
 }

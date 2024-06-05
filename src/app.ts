@@ -4,6 +4,7 @@ import express from "express";
 
 // Import the 'cors' library which allows handling Cross-Origin Resource Sharing
 import cors from "cors";
+import { ProductRoutes } from "./app/modules/product/product.route";
 
 
 // Create an instance of an Express application
@@ -19,13 +20,13 @@ app.use(cors());
 
 
 // Define application routes
-// Uncomment the line below to use the StudentRoutes for handling routes starting with '/api/v1/students'
-// app.use('/api/v1/students', StudentRoutes);
+
+app.use('/api/v1/product', ProductRoutes);
 
 
 // Define a route for the root URL that sends a greeting message
 app.get('/', (req, res) => {
-    res.send('The Server Running');
+    res.send('The Briyani Boss Server Running');
 });
 
 
