@@ -22,11 +22,18 @@ export async function login(req: Request, res: Response): Promise<Response> {
             expiresIn: process.env.EXPIRES_IN,
         });
 
-        // Return the token in the response
+        // Set token in HttpOnly cookie
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production", // Set to true in production
+            sameSite: "strict",
+            path: "/",
+        });
+
+        // Return success message
         return res.json({
             success: true,
             message: "Login successful",
-            token,
         });
     } catch (error) {
         console.error("Error during login:", error);
