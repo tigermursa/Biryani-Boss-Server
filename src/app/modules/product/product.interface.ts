@@ -16,6 +16,7 @@ export type TProduct = {
     priceMd: number;
     priceLg: number;
     isDeleted: boolean;
-    drinks: Drink[];
+    status: boolean;
+    drinks: Drink[] ;
 }
 

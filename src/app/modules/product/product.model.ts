@@ -53,6 +53,7 @@ const ProductSchema = new Schema<TProduct>({
         type: Number,
         required: true
     },
+    status: { type: Boolean, default: true },
     isDeleted: { type: Boolean, default: false },
     drinks: [DrinkSchema]
 });
